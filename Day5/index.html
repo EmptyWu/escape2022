@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六角西餐廳</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <form
+        action="https://docs.google.com/forms/d/e/1FAIpQLSfic923lo2dpUIDYupPBjUsVMI7WT5_PE_p9afhS8ujiSDIQg/formResponse"
+        method="post">
+        <input type="hidden" name="entry.569179673_year" id="entry.569179673_year" value="">
+                        <input type="hidden" name="entry.569179673_month" id="entry.569179673_month"  value="">
+                        <input type="hidden" name="entry.569179673_day" id="entry.569179673_day" value="">
+        <div class="container">
+            <div class="row mb-3">
+
+                <div class="col-6">
+                    <label for="entry.1025919163" class="form-label">姓名</label>
+                    <input type="text" name="entry.1025919163" id="entry.1025919163" value="" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="entry.1608584399" class="form-label">電話</label>
+                    <input type="tel" name="entry.1608584399" id="entry.1608584399" value="" class="form-control">
+                </div>
+            </div>
+            <div class="row  mb-3">
+                <div class="col ">
+                    <label for="entry.569179673">日期</label>
+                    <div class="input-group">
+
+                        <input type="date" id="entry.569179673" class="form-control">
+                        <!-- <span class="input-group-text bi bi-calendar"></span> -->
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row  mb-3">
+                <div class="col">
+                    <label for="entry.327745115" class="form-label">用餐人數</label>
+                    <div class="input-group">
+                        <select class="form-select" aria-label="Default select example" name="entry.327745115"
+                            id="entry.327745115">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            <option value="3">7</option>
+                            <option value="3">8</option>
+                            <option value="3">9</option>
+                            <option value="3">10</option>
+                        </select>
+                        <!-- <span class="input-group-text bi bi-caret-down"></span> -->
+                    </div>
+                    <!-- <input type="hidden" name="entry.327745115" value="2"> -->
+
+                </div>
+            </div>
+            <div class="row  mb-3">
+                <div class="col">
+
+                    <label class="form-label">其他項目</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="需要兒童座椅" name="entry.661876111"
+                            id="entry.661876111.1">
+                        <label class="form-check-label" for="entry.661876111.1">
+                            需要兒童座椅
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="素食餐點" name="entry.661876111"
+                            id="entry.661876111.2" >
+                        <label class="form-check-label" for="entry.661876111.2">
+                            素食餐點
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="吸煙區" name="entry.661876111"
+                            id="entry.661876111.3" >
+                        <label class="form-check-label" for="entry.661876111.3">
+                            吸煙區
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- <input type="hidden" name="entry.661876111" value="需要兒童座椅">
+        <input type="hidden" name="entry.661876111" value="素食餐點">
+        <input type="hidden" name="entry.661876111" value="吸煙區"> -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-dark" onclick="sendgoogle();">送出</button>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function sendgoogle() {
+            const name=document.getElementById('entry.1025919163');
+            const tel=document.getElementById('entry.1608584399');
+            const day=document.getElementById('entry.569179673');
+            document.getElementById('entry.569179673_year').value=day.valueAsDate.getFullYear();
+            document.getElementById('entry.569179673_month').value=day.valueAsDate.getMonth()+1;
+            document.getElementById('entry.569179673_day').value=day.valueAsDate.getDate();
+
+            const people=document.getElementById('entry.327745115');
+            const other=document.getElementsByName('entry.661876111');
+            let formdata=new FormData();
+
+            formdata.append('entry.1025919163',name.value);
+            formdata.append('entry.1608584399',tel.value);
+            formdata.append('entry.569179673_year',day.valueAsDate.getFullYear());
+            formdata.append('entry.569179673_month',day.valueAsDate.getUTCMonth()+1);
+            formdata.append('entry.569179673_day',day.valueAsDate.getDate());
+            formdata.append('entry.327745115',people.value);
+            other.forEach(element => {
+                if(element.checked){ 
+                    formdata.append(element.name,element.value);
+                    
+                    }
+                });
+            // axios.post('https://docs.google.com/forms/d/e/1FAIpQLSfic923lo2dpUIDYupPBjUsVMI7WT5_PE_p9afhS8ujiSDIQg/formResponse',formdata)
+            // .then(res=>{
+            //     console.log(res);
+            // });
+            //console.log(other);
+            return false;
+
+        }
+    </script>
+</body>
+
+</html>
