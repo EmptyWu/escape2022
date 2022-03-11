@@ -15,89 +15,68 @@
     <form
         action="https://docs.google.com/forms/d/e/1FAIpQLSfic923lo2dpUIDYupPBjUsVMI7WT5_PE_p9afhS8ujiSDIQg/formResponse"
         method="post">
-        <input type="hidden" name="entry.569179673_year" id="entry.569179673_year" value="">
-                        <input type="hidden" name="entry.569179673_month" id="entry.569179673_month"  value="">
-                        <input type="hidden" name="entry.569179673_day" id="entry.569179673_day" value="">
-        <div class="container">
-            <div class="row mb-3">
-
-                <div class="col-6">
+        <div class="container mt-4">
+            <h1 class="text-center">六角西餐廳</h1>
+            <div class="row mt-4 mb-3 gy-3">
+                <div class="col-md-6">
                     <label for="entry.1025919163" class="form-label">姓名</label>
-                    <input type="text" name="entry.1025919163" id="entry.1025919163" value="" class="form-control">
+                    <input type="text" name="entry.1025919163" id="entry.1025919163" value="" class="form-control"
+                        required>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <label for="entry.1608584399" class="form-label">電話</label>
-                    <input type="tel" name="entry.1608584399" id="entry.1608584399" value="" class="form-control">
+                    <input type="tel" name="entry.1608584399" id="entry.1608584399" value="" class="form-control"
+                        required>
                 </div>
             </div>
-            <div class="row  mb-3">
-                <div class="col ">
-                    <label for="entry.569179673">日期</label>
-                    <div class="input-group">
-
-                        <input type="date" id="entry.569179673" class="form-control">
-                        <!-- <span class="input-group-text bi bi-calendar"></span> -->
-
-                        
-                    </div>
+            <div class="col-12 mt-3">
+                <label for="entry.569179673">日期</label>
+                <input type="date" name="entry.569179673" id="entry.569179673" class="form-control" min="2022-03-01"
+                    max="9999-12-31" value="2022-03-01" required>
+            </div>
+            <div class="col-12 mt-3">
+                <label for="entry.327745115" class="form-label">用餐人數</label>
+                <select class="form-select" aria-label="Default select example" name="entry.327745115"
+                    id="entry.327745115" required>
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    <option value="3">7</option>
+                    <option value="3">8</option>
+                    <option value="3">9</option>
+                    <option value="3">10</option>
+                </select>
+            </div>
+            <div class="col-12 mb-3 mt-3">
+                <label class="form-label">其他項目</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="需要兒童座椅" name="entry.661876111"
+                        id="entry.661876111.1">
+                    <label class="form-check-label" for="entry.661876111.1">
+                        需要兒童座椅
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="素食餐點" name="entry.661876111"
+                        id="entry.661876111.2">
+                    <label class="form-check-label" for="entry.661876111.2">
+                        素食餐點
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="吸煙區" name="entry.661876111"
+                        id="entry.661876111.3">
+                    <label class="form-check-label" for="entry.661876111.3">
+                        吸煙區
+                    </label>
                 </div>
             </div>
-            <div class="row  mb-3">
-                <div class="col">
-                    <label for="entry.327745115" class="form-label">用餐人數</label>
-                    <div class="input-group">
-                        <select class="form-select" aria-label="Default select example" name="entry.327745115"
-                            id="entry.327745115">
-                            <option value=""></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="3">5</option>
-                            <option value="3">6</option>
-                            <option value="3">7</option>
-                            <option value="3">8</option>
-                            <option value="3">9</option>
-                            <option value="3">10</option>
-                        </select>
-                        <!-- <span class="input-group-text bi bi-caret-down"></span> -->
-                    </div>
-                    <!-- <input type="hidden" name="entry.327745115" value="2"> -->
-
-                </div>
-            </div>
-            <div class="row  mb-3">
-                <div class="col">
-
-                    <label class="form-label">其他項目</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="需要兒童座椅" name="entry.661876111"
-                            id="entry.661876111.1">
-                        <label class="form-check-label" for="entry.661876111.1">
-                            需要兒童座椅
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="素食餐點" name="entry.661876111"
-                            id="entry.661876111.2" >
-                        <label class="form-check-label" for="entry.661876111.2">
-                            素食餐點
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="吸煙區" name="entry.661876111"
-                            id="entry.661876111.3" >
-                        <label class="form-check-label" for="entry.661876111.3">
-                            吸煙區
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <!-- <input type="hidden" name="entry.661876111" value="需要兒童座椅">
-        <input type="hidden" name="entry.661876111" value="素食餐點">
-        <input type="hidden" name="entry.661876111" value="吸煙區"> -->
             <div class="d-grid gap-2">
-                <button class="btn btn-dark" onclick="sendgoogle();">送出</button>
+                <button class="btn btn-dark w-100" type="submit">送出</button>
             </div>
         </div>
     </form>
@@ -105,38 +84,9 @@
         integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        function sendgoogle() {
-            const name=document.getElementById('entry.1025919163');
-            const tel=document.getElementById('entry.1608584399');
-            const day=document.getElementById('entry.569179673');
-            document.getElementById('entry.569179673_year').value=day.valueAsDate.getFullYear();
-            document.getElementById('entry.569179673_month').value=day.valueAsDate.getMonth()+1;
-            document.getElementById('entry.569179673_day').value=day.valueAsDate.getDate();
-
-            const people=document.getElementById('entry.327745115');
-            const other=document.getElementsByName('entry.661876111');
-            let formdata=new FormData();
-
-            formdata.append('entry.1025919163',name.value);
-            formdata.append('entry.1608584399',tel.value);
-            formdata.append('entry.569179673_year',day.valueAsDate.getFullYear());
-            formdata.append('entry.569179673_month',day.valueAsDate.getUTCMonth()+1);
-            formdata.append('entry.569179673_day',day.valueAsDate.getDate());
-            formdata.append('entry.327745115',people.value);
-            other.forEach(element => {
-                if(element.checked){ 
-                    formdata.append(element.name,element.value);
-                    
-                    }
-                });
-            // axios.post('https://docs.google.com/forms/d/e/1FAIpQLSfic923lo2dpUIDYupPBjUsVMI7WT5_PE_p9afhS8ujiSDIQg/formResponse',formdata)
-            // .then(res=>{
-            //     console.log(res);
-            // });
-            //console.log(other);
-            return false;
-
-        }
+        const d = new Date();
+        document.getElementById("entry.569179673").min = d.toISOString().split('T')[0];
+        document.getElementById("entry.569179673").value = d.toISOString().split('T')[0];
     </script>
 </body>
 

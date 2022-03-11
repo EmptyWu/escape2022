@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <style>
+        body{
+            background-color: #202d49;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:700px; height:500px;"> 
+        <center> 
+            <h3 style="color:black;"></h3> 
+        </center> 
+
+        <svg width="600" 
+             height="450"></svg> 
+    </div> 
+    <script src="https://d3js.org/d3.v4.js"></script> 
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> 
+    <script> 
+        var svg = d3.select("svg"), 
+            width = +svg.attr("width"), 
+            height = +svg.attr("height"); 
+
+        // Mercator projection 
+        // Center(0, 0) with 0 rotation 
+        var gfg = d3 
+            .geoMercator() 
+            .scale(width / 2.5 / Math.PI) 
+            .rotate([0, 0]) 
+            .center([0, 0]) 
+            .translate([width / 2, height / 2]); 
+
+        // Loading the json data 
+        // Used json file stored at 
+/*https://raw.githubusercontent.com/janasayantan 
+         /datageojson/master/world.json*/ 
+        d3.json("COUNTY_MOI_1090820 (1).json",  
+          function (data) { 
+            // Drawing the map 
+            svg.append("g").selectAll( 
+              "path").data(data.features).enter().append( 
+              "path").attr("fill", "black").attr( 
+              "d", d3.geoPath().projection(gfg)).style( 
+              "stroke", "#ffff"); 
+        }); 
+    </script> 
+    <script>
+        /*const county_geomap_api = "https://hexschool.github.io/tw_revenue/taiwan-geomap.json";
+const county_revenue_api = "https://hexschool.github.io/tw_revenue/tw_revenue.json";
+
+https://filedn.com/lAm5MBCYJsLzh8kylcgU5Lh/COUNTY_MOI_1090820.json
+*/
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+$(document).ready(function(){ changeCorlor(); }); function changeCorlor(){//控制circle顏色漸變屬性 var svg =
+d3.select("body").select("svg"); //svg.select('#g1').attr("stop-color","yellow");
+svg.select('#svg_4').append("animate").attr("attributeName","fill")//因為是填充色，所以用fill屬性；如果漸變的是線條的顏色，就改成stroke屬性
+.attr('attributeType','XML') .attr('from','green') .attr('to','red') .attr('dur','1s') .attr('fill','freeze'); }
+function changeColor2(){ //利用d3.js獲取svg元素 var svg = d3.select("body").select("svg");
+//svg.select('#g1').attr("stop-color","yellow"); //svg.select('#svg_4').remove("animate"); var animate =
+svg.select('#svg_4').append("animate"); animate.attr("attributeName","fill") .attr('attributeType','XML')
+.attr('from','green') .attr('to','yellow') .attr('dur','5s') //秒數太小時看不出漸變的效果，不知道啥原因？？？而且漸變就第一次點選有效果，不知道為啥？？？
+.attr('fill','freeze'); }

@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "06d4aeda-c27f-468c-a84e-89fd1a093947",
+		"name": "Post...man 郵...差?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[Get] 取得產品列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/shopping/v1/products",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"shopping",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Get] 取得單一產品詳細資訊",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/shopping/v1/product/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"shopping",
+						"v1",
+						"product",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "Y4agVBkW3c2Y5q9U"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Post] 新增產品",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"gNd4cp2u5NxXTTaT\",\r\n    \"name\": \"KoboGame\",\r\n    \"category\": \"game\",\r\n    \"price\": 1000,\r\n    \"description\": \"超好玩遊戲\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/shopping/v1/product",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"shopping",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Put] 編輯產品",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"FlashSpeed9\",\r\n    \"category\": \"wifi\",\r\n    \"price\": 500,\r\n    \"description\": \"PlayStation6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/shopping/v1/product/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"shopping",
+						"v1",
+						"product",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "Y4agVBkW3c2Y5q9U"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Patch] 修改產品狀態",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/shopping/v1/product/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"shopping",
+						"v1",
+						"product",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "Y4agVBkW3c2Y5q9U"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
