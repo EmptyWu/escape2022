@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <style>
+        /* ---- reset ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+/* ---- sidebar --- */
+.container {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  background-color: #e0e0e0;
+  width: 300px;
+  padding: 80px 30px 80px 10px;
+  margin-right: 50px;
+  line-height: 1.5;
+}
+.nav {
+  width: fit-content;
+  margin: 0 auto;
+}
+.sidebar li {
+  margin-left: 2rem;
+  color: #6c6c6c;
+}
+.sidebar li:nth-child(2) {
+  margin: 1rem 0 2rem 2rem;
+}
+.sidebar li:nth-child(2) p:first-child {
+  color: black;
+}
+.photographer {
+  font-size: 1rem;
+  line-height: 3;
+}
+/* ---- grid ---- */
+
+.grid {
+  background: #fcfcfc;
+  width: 0;
+  flex-grow: 1;
+}
+
+/* clear fix */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: calc(33.333% - 4px);
+}
+
+.grid-item {
+  float: left;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.hide {
+  opacity: 0;
+}
+
+/* ---- animation ---- */
+.bounce-in {
+  animation: bounce-in 0.2s;
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <nav class="nav">
+          <h2 ><p>Eric Johnson</p> <p class="photographer">Photographer</>
+          </h2>
+          <li><p>- MOUNTAIN</p><p>- DESSERT</p><p>- EXHIBITIONS</p></li>
+          <li>ABOUT</li>
+          <li>CONTACT</li>
+        </nav>
+        </div>
+
+        <div class="grid">
+        <div class="grid-sizer"></div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/OkKwWM9.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/kgTEVHZ.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/vZoqs0P.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/LNUXzZF.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/ArsdCGv.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/eUppgFB.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img src="https://i.imgur.com/s6w2RpD.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/SEu9pHo.jpeg" />
+        </div>
+        <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/vb0uajo.jpeg" />
+        </div>
+          <div class="grid-item hide">
+          <img class="grid-img" src="https://i.imgur.com/WAIXTXs.jpeg" />
+        </div>
+      </div>
+      </div>
+      <script>
+const showImg = (item) => {
+  item.classList.remove("hide");
+};
+const gridItems = document.querySelectorAll(".grid-item");
+const gridNode = document.querySelector(".grid");
+gridNode.addEventListener("animationend", (e) => {
+  showImg(e.target);
+});
+
+window.imgCounter = 0;
+
+const animating = (item) => () => {
+  if (item) {
+    item.classList.add("bounce-in");
+    window.imgCounter++;
+    if (window.imgCounter < gridItems.length) { requestAnimationFrame(animating(gridItems[window.imgCounter]));
+    }
+  }
+};
+
+// initialize Masonry
+const $grid = $(".grid").masonry({
+  itemSelector: ".grid-item",
+  percentPosition: true,
+  columnWidth: ".grid-sizer",
+  gutter: 4
+});
+
+// layout after image loads
+$grid.imagesLoaded().progress(function () {
+  $grid.masonry();
+});
+
+$(".grid")
+  .imagesLoaded()
+  .done(function () { requestAnimationFrame(animating(gridItems[window.imgCounter]));
+  });
+
+
+      </script>
+</body>
+</html>
